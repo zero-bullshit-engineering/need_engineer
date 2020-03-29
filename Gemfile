@@ -44,9 +44,6 @@ group :development, :test do
 
   # use faker for data generation
   gem "faker"
-
-  # Use pundit for authorization
-  gem "pundit"
 end
 
 group :development do
@@ -67,3 +64,6 @@ gem "devise"
 # use omniauth for oauth
 gem "omniauth"
 gem "omniauth-github"
+
+# Use pundit for authorization
+gem "pundit"
