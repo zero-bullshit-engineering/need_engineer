@@ -44,7 +44,8 @@ jobs:
         PGPORT: ${{ job.services.postgres.ports[5432] }} # get randomly assigned published port
         RAILS_ENV: test
       run: |
-        gem install bundler
+        gem install bundler rufo --no-ri --no-rdoc
+        rufo -c .
         bundle config path vendor/bundle
         bundle config --local build.sassc --disable-march-tune-native
         bundle install --jobs 4 --retry 3
