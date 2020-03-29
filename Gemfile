@@ -36,9 +36,7 @@ group :development, :test do
 
   # use capybara for acceptance-testing
   gem 'capybara'
-  gem 'poltergeist'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 4.0'
   gem 'database_cleaner-active_record'
 end
 
