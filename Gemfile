@@ -60,4 +60,3 @@ gem 'devise'
 # use omniauth for oauth
 gem 'omniauth'
 gem 'omniauth-github'
-

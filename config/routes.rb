@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   root to: "page#home"
 
   get '/home', to: 'page#home'
-
 end
