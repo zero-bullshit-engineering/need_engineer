@@ -14,3 +14,34 @@ describe "the signup process", type: :feature do
     
   end
 end
+
+describe "the signin process", type: :feature do
+  before :each do
+    User.create(email: "test@example.com",  password: "Test1234")
+  end
+  
+  
+  it "signs me in" do
+
+    visit '/users/sign_in'
+    fill_in 'Email', with: "test@example.com"
+    fill_in 'Password', with: "Test1234"
+
+    click_button "Log in"
+
+    expect(page).to have_content "Signed in successfully."
+
+  end
+
+  it "renders errors on incorrect passwords" do
+
+    visit '/users/sign_in'
+    fill_in 'Email', with: "test@example.com"
+    fill_in 'Password', with: "4321Test"
+
+    click_button "Log in"
+
+    expect(page).to have_content "Invalid Email or password."
+
+  end
+end
