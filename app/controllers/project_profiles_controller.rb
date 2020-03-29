@@ -28,7 +28,7 @@ class ProjectProfilesController < ApplicationController
 
     respond_to do |format|
       if @project_profile.save
-        format.html { redirect_to @project_profile, notice: "Project profile was successfully created." }
+        format.html { redirect_to @project_profile, notice: 'Project profile was successfully created.' }
         format.json { render :show, status: :created, location: @project_profile }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ProjectProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @project_profile.update(project_profile_params)
-        format.html { redirect_to @project_profile, notice: "Project profile was successfully updated." }
+        format.html { redirect_to @project_profile, notice: 'Project profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_profile }
       else
         format.html { render :edit }
@@ -56,20 +56,19 @@ class ProjectProfilesController < ApplicationController
   def destroy
     @project_profile.destroy
     respond_to do |format|
-      format.html { redirect_to project_profiles_url, notice: "Project profile was successfully destroyed." }
+      format.html { redirect_to project_profiles_url, notice: 'Project profile was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_project_profile
+      @project_profile = ProjectProfile.find(params[:id])
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_project_profile
-    @project_profile = ProjectProfile.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def project_profile_params
-    params.require(:project_profile).permit(:name, :short_description, :domain_introduction, :project_link)
-  end
+    # Only allow a list of trusted parameters through.
+    def project_profile_params
+      params.require(:project_profile).permit(:name, :short_description, :domain_introduction, :project_link)
+    end
 end

@@ -1,9 +1,9 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe "skills/new", type: :view do
   before(:each) do
     assign(:skill, Skill.new(
-      name: "MyString",
+      name: "MyString"
     ))
   end
 
@@ -11,6 +11,7 @@ RSpec.describe "skills/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", skills_path, "post" do
+
       assert_select "input[name=?]", "skill[name]"
     end
   end
