@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_122634) do
+ActiveRecord::Schema.define(version: 2020_03_29_124350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -25,4 +25,21 @@ ActiveRecord::Schema.define(version: 2020_03_29_122634) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "skill_requirements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "project_profile_id", null: false
+    t.uuid "skill_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_profile_id"], name: "index_skill_requirements_on_project_profile_id"
+    t.index ["skill_id"], name: "index_skill_requirements_on_skill_id"
+  end
+
+  create_table "skills", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "skill_requirements", "project_profiles"
+  add_foreign_key "skill_requirements", "skills"
 end
