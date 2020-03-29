@@ -1,47 +1,43 @@
-describe "the signup process", type: :feature do
-  it "signs me up" do
+# frozen_string_literal: true
+
+describe 'the signup process', type: :feature do
+  it 'signs me up' do
     visit '/users/sign_up'
 
-    expect(page).to have_content "Sign up"
+    expect(page).to have_content 'Sign up'
 
-    fill_in 'Email', with: "test@example.com"
-    fill_in 'Password', with: "Test123456"
-    fill_in 'Password confirmation', with: "Test123456"
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: 'Test123456'
+    fill_in 'Password confirmation', with: 'Test123456'
 
-    click_button "Sign up"
+    click_button 'Sign up'
 
-    expect(page).to have_content "You have signed up successfully"
-    
+    expect(page).to have_content 'You have signed up successfully'
   end
 end
 
-describe "the signin process", type: :feature do
+describe 'the signin process', type: :feature do
   before :each do
-    User.create(email: "test@example.com",  password: "Test1234")
-  end
-  
-  
-  it "signs me in" do
-
-    visit '/users/sign_in'
-    fill_in 'Email', with: "test@example.com"
-    fill_in 'Password', with: "Test1234"
-
-    click_button "Log in"
-
-    expect(page).to have_content "Signed in successfully."
-
+    User.create(email: 'test@example.com', password: 'Test1234')
   end
 
-  it "renders errors on incorrect passwords" do
-
+  it 'signs me in' do
     visit '/users/sign_in'
-    fill_in 'Email', with: "test@example.com"
-    fill_in 'Password', with: "4321Test"
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: 'Test1234'
 
-    click_button "Log in"
+    click_button 'Log in'
 
-    expect(page).to have_content "Invalid Email or password."
+    expect(page).to have_content 'Signed in successfully.'
+  end
 
+  it 'renders errors on incorrect passwords' do
+    visit '/users/sign_in'
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: '4321Test'
+
+    click_button 'Log in'
+
+    expect(page).to have_content 'Invalid Email or password.'
   end
 end
