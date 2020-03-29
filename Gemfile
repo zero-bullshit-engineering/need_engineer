@@ -33,6 +33,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails', '~> 4.0.0'
+
+  # use capybara for acceptance-testing
+  gem 'capybara'
+  gem 'webdrivers', '~> 4.0'
+  gem 'database_cleaner-active_record'
 end
 
 group :development do
@@ -46,3 +51,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use devise for user authentication
+gem 'devise'
+
+# use omniauth for oauth
+gem 'omniauth'
+gem 'omniauth-github'
