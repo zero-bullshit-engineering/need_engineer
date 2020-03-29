@@ -17,5 +17,8 @@ describe 'ProjectProfile', type: :feature do
 
       expect(page).to have_content 'Created'
     end
+
+    it 'can be edited' do
+    end
   end
 end
