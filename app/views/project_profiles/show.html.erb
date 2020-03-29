@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project_profile.name %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @project_profile.short_description %>
+</p>
+
+<p>
+  <strong>Domain introduction:</strong>
+  <%= @project_profile.domain_introduction %>
+</p>
+
+<p>
+  <strong>Project link:</strong>
+  <%= @project_profile.project_link %>
+</p>
+
+<%= link_to 'Edit', edit_project_profile_path(@project_profile) %> |
+<%= link_to 'Back', project_profiles_path %>
