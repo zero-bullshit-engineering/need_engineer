@@ -49,3 +49,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use devise for user authentication
 gem 'devise'
+
+# use omniauth for oauth
+gem 'omniauth'
+gem 'omniauth-github'
