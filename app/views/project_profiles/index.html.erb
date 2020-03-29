@@ -20,9 +20,9 @@
         <td><%= project_profile.short_description %></td>
         <td><%= project_profile.domain_introduction %></td>
         <td><%= project_profile.project_link %></td>
-        <td><%= link_to 'Show', project_profile %></td>
-        <td><%= link_to 'Edit', edit_project_profile_path(project_profile) %></td>
-        <td><%= link_to 'Destroy', project_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", project_profile %></td>
+        <td><%= link_to "Edit", edit_project_profile_path(project_profile) %></td>
+        <td><%= link_to "Destroy", project_profile, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Project Profile', new_project_profile_path %>
+<%= link_to "New Project Profile", new_project_profile_path %>

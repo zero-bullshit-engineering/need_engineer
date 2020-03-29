@@ -7,10 +7,10 @@ FactoryBot.define do
   end
 
   factory :project_profile do
-    name { 'My Project' }
-    short_description { 'A very cool project' }
-    domain_introduction { 'Something something' }
-    project_link { 'https://google.com' }
+    name { "My Project" }
+    short_description { "A very cool project" }
+    domain_introduction { "Something something" }
+    project_link { "https://google.com" }
     association :user
   end
 end

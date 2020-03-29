@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :skill_requirements  %>
+    <%= form.label :skill_requirements %>
     <%= form.collection_check_boxes(:skill_ids, Skill.all, :id, :name) %>
   </div>
 
