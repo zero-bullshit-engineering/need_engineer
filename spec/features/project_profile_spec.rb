@@ -15,10 +15,7 @@ describe 'ProjectProfile', type: :feature do
 
       click_button 'Create Project profile'
 
-      expect(page).to have_content 'Created'
-    end
-
-    it 'can be edited' do
+      expect(page).to have_content 'created'
     end
   end
 end
