@@ -42,6 +42,9 @@ group :development, :test do
   # use factory_bot for data generation
   gem 'factory_bot_rails'
 
+  # use faker for data generation
+  gem 'faker'
+
   # Use pundit for authorization
   gem 'pundit'
 end
