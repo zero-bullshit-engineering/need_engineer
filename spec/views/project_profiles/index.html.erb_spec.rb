@@ -6,13 +6,13 @@ RSpec.describe "project_profiles/index", type: :view do
       ProjectProfile.create!(
         name: "Name",
         short_description: "MyText",
-        domain_introduction: "MyText",
+        domain_introduction: "Intro",
         project_link: "Project Link"
       ),
       ProjectProfile.create!(
         name: "Name",
         short_description: "MyText",
-        domain_introduction: "MyText",
+        domain_introduction: "Intro",
         project_link: "Project Link"
       )
     ])
@@ -22,7 +22,7 @@ RSpec.describe "project_profiles/index", type: :view do
     render
     assert_select "tr>td", text: "Name".to_s, count: 2
     assert_select "tr>td", text: "MyText".to_s, count: 2
-    assert_select "tr>td", text: "MyText".to_s, count: 2
+    assert_select "tr>td", text: "Intro".to_s, count: 2
     assert_select "tr>td", text: "Project Link".to_s, count: 2
   end
 end
