@@ -38,6 +38,15 @@ group :development, :test do
   gem 'capybara'
   gem 'webdrivers', '~> 4.0'
   gem 'database_cleaner-active_record'
+
+  # use factory_bot for data generation
+  gem 'factory_bot_rails'
+
+  # use faker for data generation
+  gem 'faker'
+
+  # Use pundit for authorization
+  gem 'pundit'
 end
 
 group :development do

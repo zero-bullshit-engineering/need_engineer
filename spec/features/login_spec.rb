@@ -18,13 +18,13 @@ end
 
 describe 'the signin process', type: :feature do
   before :each do
-    User.create(email: 'test@example.com', password: 'Test1234')
+    @user = create(:user)
   end
 
   it 'signs me in' do
     visit '/users/sign_in'
-    fill_in 'Email', with: 'test@example.com'
-    fill_in 'Password', with: 'Test1234'
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
 
     click_button 'Log in'
 
@@ -33,7 +33,7 @@ describe 'the signin process', type: :feature do
 
   it 'renders errors on incorrect passwords' do
     visit '/users/sign_in'
-    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Email', with: @user.email
     fill_in 'Password', with: '4321Test'
 
     click_button 'Log in'

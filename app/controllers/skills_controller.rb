@@ -1,30 +1,37 @@
+# frozen_string_literal: true
+
 class SkillsController < ApplicationController
-  before_action :set_skill, only: [:show, :edit, :update, :destroy]
+  before_action :set_skill, only: %i[show edit update destroy]
 
   # GET /skills
   # GET /skills.json
   def index
-    @skills = Skill.all
+    authorize Skill
+    @skills = policy_scope(Skill)
   end
 
   # GET /skills/1
   # GET /skills/1.json
   def show
+    authorize Skill
   end
 
   # GET /skills/new
   def new
     @skill = Skill.new
+    authorize @skill
   end
 
   # GET /skills/1/edit
   def edit
+    authorize @skill
   end
 
   # POST /skills
   # POST /skills.json
   def create
     @skill = Skill.new(skill_params)
+    authorize @skill
 
     respond_to do |format|
       if @skill.save
@@ -40,6 +47,8 @@ class SkillsController < ApplicationController
   # PATCH/PUT /skills/1
   # PATCH/PUT /skills/1.json
   def update
+    authorize @skill
+
     respond_to do |format|
       if @skill.update(skill_params)
         format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
@@ -54,6 +63,8 @@ class SkillsController < ApplicationController
   # DELETE /skills/1
   # DELETE /skills/1.json
   def destroy
+    authorize @skill
+
     @skill.destroy
     respond_to do |format|
       format.html { redirect_to skills_url, notice: 'Skill was successfully destroyed.' }
@@ -62,13 +73,14 @@ class SkillsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_skill
-      @skill = Skill.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def skill_params
-      params.require(:skill).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_skill
+    @skill = Skill.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def skill_params
+    params.require(:skill).permit(:name)
+  end
 end
