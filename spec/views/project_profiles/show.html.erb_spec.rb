@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "project_profiles/show", type: :view do
   before(:each) do
@@ -6,7 +6,7 @@ RSpec.describe "project_profiles/show", type: :view do
       name: "Name",
       short_description: "MyText",
       domain_introduction: "MyText",
-      project_link: "Project Link"
+      project_link: "Project Link",
     ))
   end
 

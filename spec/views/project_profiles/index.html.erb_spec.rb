@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "project_profiles/index", type: :view do
   before(:each) do
@@ -7,14 +7,14 @@ RSpec.describe "project_profiles/index", type: :view do
         name: "Name",
         short_description: "MyText",
         domain_introduction: "Intro",
-        project_link: "Project Link"
+        project_link: "Project Link",
       ),
       ProjectProfile.create!(
         name: "Name",
         short_description: "MyText",
         domain_introduction: "Intro",
-        project_link: "Project Link"
-      )
+        project_link: "Project Link",
+      ),
     ])
   end
 
