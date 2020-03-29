@@ -1,1 +1,9 @@
-<h1>Home</h1>
+<div class="jumbotron">
+  <h1 class="display-4">NeedEngineer</h1>
+  <p class="lead">Matching tech volunteers with non-profit organizations.</p>
+
+  <div class="d-flex justify-content-between align-items-stretch flex-wrap">
+    <%= link_to "Find a project", project_profiles_path,  class: "btn btn-primary btn-lg flex-grow-1 mr-2" %>
+    <%= link_to "Register a project", new_project_profile_path,  class: "btn btn-primary btn-lg flex-grow-1" %>
+  </div>
+</div>
