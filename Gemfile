@@ -67,3 +67,6 @@ gem "omniauth-github"
 
 # Use pundit for authorization
 gem "pundit"
+
+# use sentry for error tracking
+gem "sentry-raven"
