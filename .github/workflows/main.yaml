@@ -11,10 +11,10 @@ jobs:
     # https://github.com/actions/example-services/tree/master/.github/workflows
     services:
       postgres:
-        image: postgres:11
+        image: postgres:12.2
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: "postgres"
           POSTGRES_DB: postgres
         ports:
         # will assign a random free host port
