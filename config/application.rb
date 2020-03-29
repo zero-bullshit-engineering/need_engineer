@@ -30,6 +30,9 @@ module NeedEngineer
     # the framework and any gems in your application.
 
     # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.generators do |generator|
+      generator.system_tests = nil
+      generator.orm :active_record, primary_key_type: :uuid
+    end
   end
 end
