@@ -5,4 +5,5 @@ class ProjectProfile < ApplicationRecord
   has_many :skills, through: :skill_requirements
 
   belongs_to :user
+  validates :name, presence: true
 end
